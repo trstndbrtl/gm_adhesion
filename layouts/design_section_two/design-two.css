@@ -1,0 +1,59 @@
+/*
+ * @file
+ * Provides the layout styles for four-column layout section.
+ */
+
+.layout--design-two-delta,
+.layout--design-two-beta,
+.layout--design-two-alpha {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.layout--design-two-delta > .layout__region,
+.layout--design-two-beta > .layout__region,
+.layout--design-two-alpha > .layout__region {
+  flex: 0 1 100%;
+}
+
+@media screen and (min-width: 40em) {
+
+  /*
+  * 50/50
+  */
+
+  .layout--design-two-delta > .layout__region--sidebar-left {
+    flex: 0 1 50%;
+  }
+
+  .layout--design-two-delta > .layout__region--sidebar-right {
+    flex: 0 1 50%;
+  }
+
+  /*
+  * 33/66
+  */
+
+  .layout--design-two-beta > .layout__region--sidebar-left {
+    flex: 0 1 33.333%;
+  }
+
+  .layout--design-two-beta > .layout__region--sidebar-right {
+    flex: 0 1 66.666%;
+  }
+
+    /*
+  * 50/50
+  */
+
+  .layout--design-two-alpha > .layout__region--sidebar-left {
+    flex: 0 1 66.666%;
+  }
+
+  .layout--design-two-alpha > .layout__region--sidebar-right {
+    flex: 0 1 33.333%;
+  }
+
+
+}

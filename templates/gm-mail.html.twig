@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>{{ title }}</title>
+</head>
+
+<body>
+
+<!-- body -->
+<table>
+  <tr>
+    <td>
+      <!-- content -->
+      <div class="content">
+        <table>
+          {% if logo %}
+            <tr>
+              <td align="left">
+                <img width="500" src="{{logo}}">
+              </td>
+            </tr>
+          {% endif %}
+          <tr>
+            <td>
+              {% if title %}
+                <h1>{{ title }}</h1>
+              {% endif %}
+
+              {% if username %}
+                <p>Bonjour {{ username }},</p>
+              {% else %}
+                <p>Bonjour,</p>
+              {% endif %}
+
+              {% if notification %}
+                {{ notification|raw }}
+              {% endif %}
+
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>à bientôt</p>
+              {% if site_name %}
+                <p>Toute l'équipe de {{site_name}}</p>
+              {% endif %}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- /content -->
+    </td>
+  </tr>
+</table>
+<!-- /body -->
+
+{% if footer %}
+<!-- footer -->
+<table class="footer-wrap">
+  <tr>
+    <td class="container">
+      <!-- content -->
+      <div class="content">
+        <table>
+          <tr>
+            <td align="center">
+              <p>{{ footer }}</p>
+              
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- /content -->
+    </td>
+  </tr>
+</table>
+<!-- /footer -->
+{% endif %}
+
+</body>
+</html>

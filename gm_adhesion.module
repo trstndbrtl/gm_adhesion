@@ -1,0 +1,97 @@
+<?php
+
+function gm_adhesion_theme() {
+    $theme = [];
+    $theme['donstart_form_two'] = [
+      'render element' => 'form',
+      'template' => 'gm-adhesion-donner',
+    //   'variables' => ['gm_type' => NULL],
+    ];
+    $theme['donate_paypal'] = [
+      'variables' => [
+        'donation_type_p' => NULL,
+        'amount_list_ponctuel' => NULL,
+        'amount_list_mensuel' => NULL,
+        'autre_montant' => NULL,
+        'donation_amount' => NULL,
+        'don_souhaite' => NULL,
+        'taux_imposition' => NULL,
+        'personne_nationalite' => NULL,
+        'personne_morale' => NULL,
+        'personne_mentions' => NULL,
+        'destinataire_don' => NULL,
+        'donnee_formulaire' => NULL,
+        'client' => NULL,
+        'bg_page' => NULL,
+        'donation_nid' => NULL
+      ],
+    ];
+    $theme['donate_merci'] = [
+      'template' => 'donate-merci',
+      'variables' => [
+        'donation_type_p' => NULL,
+        'donation_amount' => NULL,
+        'amount_list_ponctuel' => NULL,
+        'amount_list_mensuel' => NULL,
+        'notification' => NULL,
+        'bg_page' => NULL,
+        'donation_nid' => NULL,
+        'nom_donateur' => NULL,
+      ],
+    ];
+    $theme['adhesion_courriel'] = [
+      'template' => 'gm-mail',
+      'variables' => [
+        'notification' => NULL,
+        'username' => NULL,
+        'title' => NULL,
+        'site_name' => NULL,
+        'logo' => NULL
+      ],
+    ];
+    $theme['admin_notifications'] = [
+      'template' => 'gm-notifications',
+      'variables' => [
+        'notification' => NULL,
+        'username' => NULL,
+        'title' => NULL,
+        'site_name' => NULL,
+        'logo' => NULL
+      ],
+    ];
+    return $theme;
+}
+
+function gm_adhesion_preprocess_page(&$variables) {
+
+  $host = \Drupal::request()->getHost();
+  $hostBase = \Drupal::request()->getSchemeAndHttpHost();
+  
+  if ($host) {
+    $variables['#attached']['drupalSettings']['gm_donate']['hosthtml'] = $host;
+    $variables['#attached']['drupalSettings']['gm_donate']['host'] = $hostBase;
+    $variables['#attached']['drupalSettings']['gm_donate']['module_path'] = '/' . drupal_get_path('module', 'gm_adhesion');
+  }
+  
+  $config = \Drupal::config('gm_adhesion.settings');
+  if ($config && \Drupal::routeMatch()->getRouteName() == 'gm_adhesion.donner_form_validation') {
+    $variables['#attached']['drupalSettings']['gm_donate']['mode']  = $config->get('paypal.mode');
+    $variables['#attached']['drupalSettings']['gm_donate']['donation_ponctuel'] = $config->get('paypal.donation_ponctuel');
+    $variables['#attached']['drupalSettings']['gm_donate']['donation_mensuel'] = $config->get('paypal.donation_mensuel');
+    $variables['#attached']['drupalSettings']['gm_donate']['client'] = $config->get('paypal.client_id');
+  }
+
+}
+
+function gm_adhesion_theme_suggestions_form_element_alter(array &$suggestions, array $variables, $hook) {
+  $element = $variables['element'];
+  if ($element) {
+    if (isset($element['#parents']) && isset($element['#parents'][0])) {
+      $suggestions[] = $hook . '__gm_' . $element['#parents'][0];
+    }
+    if (isset($element['#parents']) && isset($element['#parents'][1])) {
+      $suggestions[] = $hook . '__gm_' . $element['#parents'][1];
+    }
+  }
+  // $suggestions[] = $hook . '__gm_' . $variables['element']['#type'];
+}

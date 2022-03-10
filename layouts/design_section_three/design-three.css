@@ -1,0 +1,92 @@
+/*
+ * @file
+ * Provides the layout styles for four-column layout section.
+ */
+
+.layout--design-section-delta,
+.layout--design-section-beta,
+.layout--design-section-alpha {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+
+.layout--design-section-delta > .layout__region,
+.layout--design-section-beta > .layout__region,
+.layout--design-section-alpha > .layout__region {
+  flex: 0 1 100%;
+}
+
+@media screen and (min-width: 40em) {
+
+  /*
+  * 50/25/25
+  */
+  .layout--design-section-delta > .layout__region--header {
+    flex: 0 1 100%;
+  }
+
+  .layout--design-section-delta > .layout__region--sidebar-1 {
+    flex: 0 1 50%;
+  }
+
+  .layout--design-section-delta > .layout__region--sidebar-2 {
+    flex: 0 1 25%;
+  }
+
+  .layout--design-section-delta > .layout__region--sidebar-3 {
+    flex: 0 1 25%;
+  }
+
+  .layout--design-section-delta > .layout__region--footer {
+    flex: 0 1 100%;
+  }
+
+  /*
+  * 25/50/25
+  */
+  .layout--design-section-beta > .layout__region--header {
+    flex: 0 1 100%;
+  }
+
+  .layout--design-section-beta > .layout__region--sidebar-1 {
+    flex: 0 1 25%;
+  }
+
+  .layout--design-section-beta > .layout__region--sidebar-2 {
+    flex: 0 1 50%;
+  }
+
+  .layout--design-section-beta > .layout__region--sidebar-3 {
+    flex: 0 1 25%;
+  }
+
+  .layout--design-section-beta > .layout__region--footer {
+    flex: 0 1 100%;
+  }
+
+  /*
+  * 25/25/50
+  */
+
+  .layout--design-section-alpha > .layout__region--header {
+    flex: 0 1 100%;
+  }
+
+  .layout--design-section-alpha > .layout__region--sidebar-1 {
+    flex: 0 1 25%;
+  }
+
+  .layout--design-section-alpha > .layout__region--sidebar-2 {
+    flex: 0 1 25%;
+  }
+
+  .layout--design-section-alpha > .layout__region--sidebar-3 {
+    flex: 0 1 50%;
+  }
+
+  .layout--design-section-alpha > .layout__region--footer {
+    flex: 0 1 100%;
+  }
+
+}

@@ -1,0 +1,132 @@
+# gm_adhesion.adhesion_form:
+#   path: '/adherer'
+#   defaults:
+#     _form: 'Drupal\gm_adhesion\Form\AdhesionForm'
+#     _title: 'Adhérer'
+#   requirements:
+#     _permission: 'access content'
+
+# gm_adhesion.donner_form:
+#   path: '/donner'
+#   defaults:
+#     _form: 'Drupal\gm_adhesion\Form\DonateForm'
+#     _title: 'Je participe'
+#   requirements:
+#     _permission: 'access content'
+#   options:
+#     no_cache: 'TRUE'
+
+gm_adhesion.donner_form_validation:
+  path: '/donner/paiement'
+  defaults:
+    _controller: '\Drupal\gm_adhesion\Controller\DonatePaypalController::validerMaDonation'
+    _title: 'Je valide ma participation'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+gm_adhesion.donner_page_merci:
+  path: '/donner/merci'
+  defaults:
+    _controller: '\Drupal\gm_adhesion\Controller\DonatePaypalController::merciBeaucoup'
+    _title: 'Merci Beaucoup'
+  requirements:
+    _permission: 'access content'
+
+gm_adhesion.admin.settings_form:
+  path: '/admin/config/gm-don-paypal'
+  defaults:
+    _form: '\Drupal\gm_adhesion\Form\PayPalSettingsForm'
+    _title: 'Donate Paypal settings'
+  requirements:
+    _permission: 'gm_adhesion.administer'
+  options:
+    no_cache: 'TRUE'
+
+gm_adhesion.admin.settings_form_ponctuel:
+  path: '/admin/config/gm-don-paypal-ponctuel'
+  defaults:
+    _form: '\Drupal\gm_adhesion\Form\PayPalPonctuelForm'
+    _title: 'Donate Ponctuel Paypal settings'
+  requirements:
+    _permission: 'gm_adhesion.administer'
+
+gm_adhesion.admin.settings_form_mensuel:
+  path: '/admin/config/gm-don-paypal-mensuel'
+  defaults:
+    _form: '\Drupal\gm_adhesion\Form\PayPalMensuelForm'
+    _title: 'Donate Mensuel Paypal settings'
+  requirements:
+    _permission: 'gm_adhesion.administer'
+
+gm_adhesion.admin.settings_form_design:
+  path: '/admin/config/gm-don-paypal-design'
+  defaults:
+    _form: '\Drupal\gm_adhesion\Form\PayPalDesignForm'
+    _title: 'Donate design Paypal settings'
+  requirements:
+    _permission: 'gm_adhesion.administer'
+
+gm_adhesion.admin.settings_adhesion_form_design:
+  path: '/admin/config/gm-adhesion-design'
+  defaults:
+    _form: '\Drupal\gm_adhesion\Form\AdhesionDesignForm'
+    _title: 'Adhesion design settings'
+  requirements:
+    _permission: 'gm_adhesion.administer'
+
+gm_adhesion.admin.settings_mailer_message_form:
+  path: '/admin/config/gm-mailer-msg'
+  defaults:
+    _form: '\Drupal\gm_adhesion\Form\MailerMessagesForm'
+    _title: 'Mailer message settings'
+  requirements:
+    _permission: 'gm_adhesion.administer'
+
+gm_adhesion.on_approve_order:
+  path: '/gm-adhesion/approve'
+  defaults:
+    _controller: '\Drupal\gm_adhesion\Controller\DonatePaypalController::approve'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: 'TRUE'
+
+gm_adhesion.on_subscription_order:
+  path: '/gm-donation/subscription'
+  defaults:
+    _controller: '\Drupal\gm_adhesion\Controller\DonatePaypalController::subscription'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: 'TRUE'
+
+gm_adhesion.find_adresse:
+  # path: '/autocomplete/city/{city}/{adresse}/{code}'
+  path: '/autocomplete/city'
+  defaults:
+    _controller: '\Drupal\gm_adhesion\Controller\DonatePaypalController::findCity'
+    _format: json
+  requirements:
+    _permission: 'access content'
+
+# gm_adhesion.don_one:
+#   path: '/donner/choix'
+#   defaults:
+#     _form: '\Drupal\gm_adhesion\Form\Donstart\DonOneForm'
+#     _title: 'Je participe'
+#   requirements:
+#     _permission: 'access content'
+#   options:
+#     no_cache: 'TRUE'
+
+# gm_adhesion.don_two:
+#   path: '/donner/validation'
+#   defaults:
+#     _form: '\Drupal\gm_adhesion\Form\Donstart\DonTwoForm'
+#     _title: 'Second form'
+#   requirements:
+#     _permission: 'access content'
+#   options:
+#     no_cache: 'TRUE'

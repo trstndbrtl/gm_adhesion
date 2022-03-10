@@ -1,0 +1,191 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for the gm_adhesion module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function gm_adhesion_schema() {
+  
+  $schema['users_paypal_donation'] = [
+    'description' => 'The list of users who have made a donation.',
+    'fields' => [
+      'id' => [
+        'description' => 'The donor ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid_logged' => [
+        'description' => 'The User ID if logged',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => NULL,
+      ],
+      'status' => [
+        'description' => 'Statue of the subscription.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 1,
+      ],
+      'type' => [
+        'description' => 'The type of the donation.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'facilitator_token' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'description' => 'The facilitator token.',
+      ],
+      'billing_token' => [
+        'description' => 'The billing Token.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'order_id' => [
+        'description' => 'The order id.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'subscription_if' => [
+        'description' => 'The subscription id.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'custom_id' => [
+        'description' => 'The custom id.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'plan_id' => [
+        'description' => 'The plan paypal id.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'object_paypal' => [
+        'type' => 'blob',
+        'not null' => FALSE,
+        'size' => 'big',
+        'description' => 'Serialized array of variables.',
+      ],
+      'email' => [
+        'description' => 'The mail of the subscriber.',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'gender' => [
+        'description' => 'The gender of the donor.',
+        'type' => 'varchar_ascii',
+        'length' => 30,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'name' => [
+        'description' => 'The name of the donor.',
+        'type' => 'varchar_ascii',
+        'length' => 60,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'forname' => [
+        'description' => 'The forname of the donor.',
+        'type' => 'varchar_ascii',
+        'length' => 60,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'nationality' => [
+        'description' => 'The nationality of the donor.',
+        'type' => 'varchar_ascii',
+        'length' => 60,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'adresse' => [
+        'description' => 'The adresse of the donor.',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'postal_code' => [
+        'description' => 'The postal code of the donor',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+      ],
+      'city' => [
+        'description' => 'The city of the donor',
+        'type' => 'varchar_ascii',
+        'length' => 128,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'honneur_certification' => [
+        'description' => 'The natural person certification',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 1,
+      ],
+      'nationalite_certification' => [
+        'description' => 'The nationality person certification',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 1,
+      ],
+      'information_desire' => [
+        'description' => 'The information person desire',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 0,
+      ],
+      'timestamp' => [
+        'description' => 'The date of the donation.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'email' => ['email'],
+      'plan_id' => ['plan_id'],
+      'subscription_if' => ['subscription_if'],
+      'order_id' => ['order_id'],
+      'uid_logged' => ['uid_logged'],
+    ],
+    'foreign keys' => [
+      'relationships_user' => [
+        'table' => 'users',
+        'columns' => ['uid_logged' => 'uid'],
+      ],
+    ],
+  ];
+
+  return $schema;
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>{{ title }}</title>
+</head>
+<body>
+<!-- body -->
+<table>
+  <tr>
+    <td>
+      <!-- content -->
+      <div class="content">
+        <table>
+          {% if logo %}
+            <tr>
+              <td align="left">
+                <img width="500" src="{{logo}}">
+              </td>
+            </tr>
+          {% endif %}
+          <tr>
+            <td>
+              {% if title %}
+                <h1>{{ title }}</h1>
+              {% endif %}
+
+              <p>Bonjour,</p>
+
+              {% if notification %}
+                {{ notification|raw }}
+              {% endif %}
+
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- /content -->
+    </td>
+  </tr>
+</table>
+<!-- /body -->
+</body>
+</html>

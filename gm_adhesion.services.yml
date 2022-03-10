@@ -1,0 +1,7 @@
+services:
+  logger.channel.gm_adhesion:
+    parent: logger.channel_base
+    arguments: ['gm_adhesion']
+  gm_adhesion.helpers_system:
+    class: Drupal\gm_adhesion\MgSystem
+    arguments: ['@state', '@entity_type.manager', '@language_manager', '@current_user', '@pathauto.alias_cleaner', '@path_alias.manager']

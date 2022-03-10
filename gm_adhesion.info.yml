@@ -1,0 +1,5 @@
+name: 'MG Adhesion'
+type: module
+description: 'Formulaire pour les adhesion.'
+core_version_requirement: ^8.9.1 || ^9
+package: 'GM'

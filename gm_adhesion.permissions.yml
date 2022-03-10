@@ -1,0 +1,4 @@
+gm_adhesion.administer:
+  title: Edit settings
+  restrict access: true
+  description: Edit settings

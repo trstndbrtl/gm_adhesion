@@ -1,0 +1,35 @@
+gm_adhesion.admin.tab_settings:
+  route_name : gm_adhesion.admin.settings_form
+  title: 'Paypal'
+  base_route: gm_adhesion.admin.settings_form
+  weight: 10
+
+gm_adhesion.admin.tab_ponctuel:
+  route_name: gm_adhesion.admin.settings_form_ponctuel
+  title: 'Ponctuel'
+  base_route: gm_adhesion.admin.settings_form
+  weight: 20
+
+gm_adhesion.admin.tab_mensuel:
+  route_name: gm_adhesion.admin.settings_form_mensuel
+  title: 'Mensuel'
+  base_route: gm_adhesion.admin.settings_form
+  weight: 20
+
+gm_adhesion.admin.tab_design:
+  route_name: gm_adhesion.admin.settings_form_design
+  title: 'Design donation'
+  base_route: gm_adhesion.admin.settings_form
+  weight: 20
+
+gm_adhesion.admin.tab_adhesion_design:
+  route_name: gm_adhesion.admin.settings_adhesion_form_design
+  title: 'Design adhesion'
+  base_route: gm_adhesion.admin.settings_form
+  weight: 20
+
+gm_adhesion.admin.tab_mailer_message:
+  route_name: gm_adhesion.admin.settings_mailer_message_form
+  title: 'Mailer message'
+  base_route: gm_adhesion.admin.settings_form
+  weight: 20

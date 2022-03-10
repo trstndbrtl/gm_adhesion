@@ -1,0 +1,439 @@
+:root {
+	--bg-color: #f1f1f1;
+	--second-color: #333;
+	--input-color: #9e9e9e;
+}
+fieldset {
+  margin: 0 !important;
+}
+
+#gm-fieldset-locality .fieldset-wrapper,
+#gm-fieldset-num .fieldset-wrapper,
+#gm-fieldset-locality .fieldset-wrapper,
+#gm-fieldset-user .fieldset-wrapper,
+#gm-fieldset-connexion .fieldset-wrapper,
+#gm-fieldset-information .fieldset-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+#gm-fieldset-connexion .fieldset-wrapper {
+  flex-direction: column;
+}
+
+#gm-fieldset-locality .fieldset-wrapper .form-item{
+  width: 100%;
+}
+
+#gm-fieldset-information .fieldset-wrapper .form-item{
+  width: calc(50% - 7px);
+}
+
+#gm-fieldset-connexion .fieldset-wrapper .form-item{
+  width: calc(100%);
+}
+
+#gm-fieldset-user .fieldset-wrapper .form-item{
+  width: calc(33.333% - 10px);
+}
+
+#gm-fieldset-num .fieldset-wrapper .form-item-num-phone{
+  width: calc(70% - 7px);
+}
+
+#gm-fieldset-num .fieldset-wrapper .form-item-num-indicatif{
+  width: calc(30% - 7px);
+}
+div#gm-donateur-adresse {
+  width: 100%;
+}
+
+fieldset {
+  margin: 0;
+}
+#gm-donate-form {
+  .fieldset-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  address, dl, fieldset, figure, ol, p, pre, ul {
+    margin: 0 0 0px 0;
+  }
+  fieldset {
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-block-start: 0em;
+    padding-inline-start: 0em;
+    padding-inline-end: 0em;
+    padding-block-end: 0em;
+    min-inline-size: min-content;
+    border-width: 0px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+  }
+  input[type="date"],
+  input[type="number"],
+  input[type="password"],
+  select,
+  input[type="email"],
+  input[type="submit"],
+  input[type="text"] {
+    width: 100%;
+    height: 45px;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none;
+    outline: 0;
+    background-image: none;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 3px;
+    padding: 20px 10px 0px 14px;
+    font-size: 14px;
+    box-shadow: 0 1px 0 0 #e5e5e5;
+    -webkit-transition: box-shadow 150ms ease-out;
+    -moz-transition: box-shadow 150ms ease-out;
+    transition: box-shadow 150ms ease-out;
+    position: relative;
+    margin-bottom: 15px;
+  }
+  #gm-donateur-genre{
+    flex: 0 1 100%;
+  }
+  #gm-donateur-prenom{
+    flex: 0 1 calc(50% - 5px);
+  }
+  #gm-donateur-nom{
+    flex: 0 1 calc(50% - 5px);
+  }
+  #gm-donateur-nationalite{
+    flex: 0 1 calc(30% - 5px);
+  }
+  #gm-donateur-adresse{
+    flex: 0 1 calc(70% - 5px);
+  }
+  #gm-donateur-email{
+    flex: 0 1 calc(100%);
+  }
+  #gm-autre {
+    width: 100%;
+  }
+  #gm-autre,
+  #gm-donateur-nationalite,
+  #gm-donateur-prenom,
+  #gm-donateur-nom,
+  #gm-donateur-adresse,
+  #gm-donateur-email {
+    .form-item {
+      position: relative;
+      label {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        color: #999;
+        margin-left: 13px;
+        z-index: 10;
+        -webkit-transition: transform 150ms ease-out, font-size 150ms ease-out;
+        -moz-transition: transform 150ms ease-out, font-size 150ms ease-out;
+        transition: transform 150ms ease-out, font-size 150ms ease-out;
+        font-size: 14px;
+      }
+      &.gm-ani-label {
+        &.focused-label {
+          label {
+            font-weight: 700;
+            -webkit-transform : translateY(-14px);
+            -moz-transform : translateY(-14px);
+            transform: translateY(-14px);
+            font-size: .75em;
+          }
+          input.focused {
+            box-shadow: 0 2px 0 0 rgb(144, 203, 238);
+          }
+      
+          input.filled {
+            box-shadow: 0 2px 0 0 rgb(198, 239, 183);
+          }
+          input.error {
+            box-shadow: 0 2px 0 0 rgb(236, 79, 47);
+          }
+        
+        }
+      }
+    }
+  }
+  #gm-donateur-nationalite {
+
+  }
+  #gm-honneur,
+  #gm-nationalite,
+  #gm-information {
+    margin-bottom: 20px;
+    .form-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      label {
+        font-size: 14px;
+        font-weight: 300;
+        position: relative;
+        // pointer-events: none;
+        top: 0;
+        transition: all 0.2s ease-in-out;
+        left: 0;
+        color: #1d1d1d;
+      }
+    }
+    
+    /* Disabled checkbox */
+    input[type=checkbox] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+    }
+    
+    input[type=checkbox] {
+      -border-radius: 30px;
+      height: 18px;
+      width: 18px;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      margin-right: 15px;
+      padding: 10px; 
+    }
+    input[type=date],
+    input[type=checkbox],
+    select {
+      cursor: pointer;
+    }
+    
+    input[type="checkbox"]:checked {
+      background: rgb(198, 239, 183);
+      /* margin:0px; */
+      position: relative;
+      border: 1px solid rgb(7, 164, 7);
+    }
+    
+    input[type="checkbox"]:checked:before {
+      content: "\2713";
+      display: block;
+      font-size: 14px;
+      position: absolute;
+      left: 5px;
+      top: 2px;
+      color: #07a407;
+    }
+    
+  }
+  input#edit-submit {
+    height:80px;
+    padding: 10px 20px;
+    background-color: rgba(203, 229, 8, 0.629);
+    color: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    &:hover {
+      background-color: rgba(170, 190, 15, 0.587);
+    }
+  }
+}
+
+@media (max-width:780px){}
+// /* // OPTION SELCT */
+/* gender */
+div#edit-donateur-genre {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 12px;
+  font-size: 12px;
+  input{
+    display: block;
+    visibility: visible;
+    left: -10000px;
+    position: absolute;
+    & + label {
+      width: 100%;
+      display: block;
+      text-align: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: #f1f1f1;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+      height: 45px;
+      padding-top: 15px;
+    }
+  }
+  .form-item-donateur-genre{
+    width: calc(33.33% - 7px);
+    input[type="radio"]:checked + label{
+      background-color: rgba(144, 144, 144, 0.3);
+      box-shadow: 0 2px 0 0 lightgreen;
+    }
+  }
+}
+/* Type donate */
+#gm-type {
+  width: 100%;
+  margin-bottom: 15px;
+  #edit-donation-type{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    input{
+      display: block;
+      visibility: visible;
+      left: -10000px;
+      position: absolute;
+      & + label {
+        width: 100%;
+        display: block;
+        text-align: center;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #f1f1f1;
+        border: none;
+        border-radius: 3px;
+        font-size: 1em;
+        height: 45px;
+        padding-top: 10px;
+      }
+    }
+    [type="radio"]:checked + label{
+      background-color: rgba(203, 229, 8, 0.629);
+    }
+    .form-item-donation-type {
+      width: calc(50% - 5px);
+    }
+  }
+}
+#gm-amount {
+  width: 100%;
+  margin-bottom: 15px;
+  #edit-amount-list-mensuel,
+  #edit-amount-list-ponctuel {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    label{
+      font-size: 21px;
+      width: 100%;
+      height: 45px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: #f1f1f1;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+      text-align: center;
+      padding-top: 10px;
+    }
+  }
+  input{
+    display: block;
+    visibility: visible;
+    left: -10000px;
+    position: absolute;
+  }
+  .form-item {
+    width: calc(20% - 8px);
+    display: flex;
+    [type="radio"]:checked + label{
+      border: 0px solid #000000;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: rgba(203, 229, 8, 0.629);
+      font-size: 24px;
+      padding: 14px 0;
+      font-weight: 800;
+    }
+  }
+}
+
+div#edit-description {
+  margin-bottom: 20px;
+}
+
+// @keyframes colorchange
+// {
+//   0%  {border-bottom:3px solid rgb(36, 214, 16);}
+//   20% {border-bottom:3px solid rgb(16, 214, 191);}
+//   40% {border-bottom:3px solid rgb(39, 16, 214);}
+//   60% {border-bottom:3px solid rgb(191, 16, 214);}
+//   80% {border-bottom:3px solid rgb(214, 16, 89);}
+//   80% {border-bottom:3px solid rgb(214, 194, 16);}
+// }
+
+// @keyframes rotate {
+// 	100% {
+// 		transform: rotate(1turn);
+// 	}
+// }
+
+// #gm-donate-form #edit-submit {
+//   height: 50px;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+//   width: 100%;
+//   border: 0px solid;
+// }
+
+// #gm-donate-form input#edit-submit{
+//   width: 100%;
+//   height: 79px;
+//   background-color: #f5ac24;
+//   color: #FFF;
+//   font-size: 21px;
+//   border: 0px solid;
+//   cursor: pointer;
+// }
+
+// #gm-donate-form input#edit-submit:hover{
+//   background-color: #e9b658;
+// }
+
+// #gm-information {
+//   margin-bottom: 41px;
+// }
+
+// #gm-donate-form label.form-required + input{
+//   border-left: 1px solid red;
+// }
+
+@media (max-width:780px){
+  
+  #gm-donateur-all .fieldset-wrapper #gm-donateur-prenom,
+  #gm-donateur-all .fieldset-wrapper #gm-donateur-nom,
+  #gm-donateur-all .fieldset-wrapper #gm-donateur-nationalite,
+  #gm-donateur-all .fieldset-wrapper #gm-donateur-email,
+  #gm-donateur-all .fieldset-wrapper #gm-donateur-adresse,
+  #gm-donateur-all .fieldset-wrapper #gm-donateur-genre{
+    flex: 0 1 100%;
+  }
+
+  #gm-amount #edit-amount-list-mensuel, 
+  #gm-amount #edit-amount-list-ponctuel {
+    flex-direction: column;
+  }
+  #gm-amount .form-item {
+    width: 100%;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

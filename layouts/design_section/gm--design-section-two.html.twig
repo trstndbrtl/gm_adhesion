@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a four-column 25%-25%-25%-25% layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'gm-layout-wrapper',
+    'layout',
+    'layout--design-section',
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if content.header %}
+      <div {{ region_attributes.header.addClass('layout__region', 'layout__region--header') }}>
+        {{ content.header }}
+      </div>
+    {% endif %}
+
+    {% if content.sidebar_one %}
+      <div {{ region_attributes.sidebar_one.addClass('layout__region', 'layout__region--sidebar-1') }}>
+        {{ content.sidebar_one }}
+      </div>
+    {% endif %}
+
+    {% if content.sidebar_two %}
+      <div {{ region_attributes.sidebar_two.addClass('layout__region', 'layout__region--sidebar-2') }}>
+        {{ content.sidebar_two }}
+      </div>
+    {% endif %}
+
+    {% if content.main %}
+      <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+        {{ content.main }}
+      </div>
+    {% endif %}
+    
+    {% if content.triptik_one %}
+      <div {{ region_attributes.triptik_one.addClass('layout__region', 'layout__region--triptik-1') }}>
+        {{ content.triptik_one }}
+      </div>
+    {% endif %}
+
+    {% if content.triptik_two %}
+      <div {{ region_attributes.triptik_two.addClass('layout__region', 'layout__region--triptik-2') }}>
+        {{ content.triptik_two}}
+      </div>
+    {% endif %}
+
+    {% if content.footer %}
+      <div {{ region_attributes.footer.addClass('layout__region', 'layout__region--footer') }}>
+        {{ content.footer }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

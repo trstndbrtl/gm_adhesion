@@ -1,0 +1,44 @@
+{{ attach_library('gm_adhesion/gm-design-all') }}
+{% if bg_page %}
+<div id="gm-main-merci" class="gm-section clearfix" style="background-image:url({{bg_page}});">
+{% else %}
+<div id="gm-main-merci" class="gm-section clearfix">
+{% endif %}
+    <div class="gm-dn-tunnel">
+        <ul>
+            <li class="gm-dn-tnnl-tm">
+                <a href="{{ path('entity.node.canonical', {'node': donation_nid}) }}">{{ 'Renseignement'|t }}</a>
+            </li>
+            <li class="gm-dn-tnnl-tm">
+                <i class="bi bi-chevron-compact-right"></i>
+            </li>
+            <li class="gm-dn-tnnl-tm">
+                <a href="#">{{ 'Payement'|t }}</a>
+            </li>
+            <li class="gm-dn-tnnl-tm">
+                <i class="bi bi-chevron-compact-right"></i>
+            </li>
+            <li class="gm-dn-tnnl-tm gm-dn-tunnel-active">
+                <a href="#">{{ 'Merci'|t }}</a>
+            </li>
+        </ul>
+    </div>
+    <div id="gm-mn-dn" class="gm-container-main">
+        {% if donation_nid %}
+            <div class="gm-go-back-w">
+                <ul>
+                    <li class="gm-go-back">
+                        <a href="{{ path('entity.node.canonical', {'node': donation_nid}) }}"><i class="bi bi-arrow-left"></i> {{ 'Retour à la page des donations'|t }}</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+        <div class="gm-dn-wrapper">
+            <div class="gm-un-grand-merci">
+                <h2>Merci {{nom_donateur}}</h2>
+                <h3>Pour votre don de {{donation_amount}} €</h3>
+                {{notification|raw}}
+            </div>
+        </div>
+     </div>
+<div>

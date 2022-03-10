@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a four-column 25%-25%-25%-25% layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'gm-layout-wrapper',
+    'layout',
+    'layout--design-two-alpha ',
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if content.sidebar_one %}
+      <div {{ region_attributes.sidebar_one.addClass('layout__region', 'layout__region--sidebar-left') }}>
+        {{ content.sidebar_one }}
+      </div>
+    {% endif %}
+
+    {% if content.sidebar_two %}
+      <div {{ region_attributes.sidebar_two.addClass('layout__region', 'layout__region--sidebar-right') }}>
+        {{ content.sidebar_two }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

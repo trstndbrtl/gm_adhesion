@@ -1,0 +1,44 @@
+# gm_adhesion.admin.settings_form_link:
+#   title: 'Hello module settings'
+#   description: 'example of how to make an admin settings page link'
+#   parent: system.admin_config_development
+gm_adhesion.admin.settings_form:
+  route_name: gm_adhesion.admin.settings_form
+  title: 'Paypal Configuration'
+  description: 'Page de configuration pour Paypal'
+  parent: system.admin_config
+
+gm_adhesion.admin.settings_form_ponctuel:
+  title: Paypal donation ponctuel
+  description: Configuration for ponctuel donation.
+  route_name: gm_adhesion.admin.settings_form_ponctuel
+  parent: gm_adhesion.admin.settings_form_link
+  weight: -9
+
+gm_adhesion.admin.settings_form_mensuel:
+  title: Paypal donation ponctuel
+  description: Configuration for ponctuel donation.
+  route_name: gm_adhesion.admin.settings_form_mensuel
+  parent: gm_adhesion.admin.settings_form_link
+  weight: -9
+
+gm_adhesion.admin.settings_form_design:
+  title: Paypal donation Design
+  description: Design for donation page.
+  route_name: gm_adhesion.admin.settings_form_design
+  parent: gm_adhesion.admin.settings_form_link
+  weight: -9
+
+gm_adhesion.admin.settings_adhesion_form_design:
+  title: Paypal donation Design
+  description: Design for donation page.
+  route_name: gm_adhesion.admin.settings_adhesion_form_design
+  parent: gm_adhesion.admin.settings_form_link
+  weight: -9
+
+gm_adhesion.admin.settings_mailer_message_form:
+  title: Mailer message
+  description: Design for donation page.
+  route_name: gm_adhesion.admin.settings_mailer_message_form
+  parent: gm_adhesion.admin.settings_form_link
+  weight: -9

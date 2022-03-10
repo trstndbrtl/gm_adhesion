@@ -1,0 +1,117 @@
+#block-gentil-page-title {
+    text-align: center;
+}
+
+.gm-donate-form {
+
+}
+
+.gm-donate-form #gm-description {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Type donate */
+.gm-donate-form #gm-type #edit-d-type {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.gm-donate-form #gm-type #edit-d-type input{
+	display: none;
+}
+
+.gm-donate-form #gm-type #edit-d-type .form-item-d-type [type="radio"]:checked + label{
+	border: 1px solid #000000;
+    background: rgba(1,1,1,.1);
+}
+
+.gm-donate-form #gm-type #edit-d-type .form-item-d-type [type="radio"] label{
+	border: 1px solid #000000;
+}
+
+.gm-donate-form #gm-type #edit-d-type input + label{
+	width: 100%;
+    display: inline-block;
+    border: 1px solid;
+    padding: 10px;
+    
+}
+
+.gm-donate-form #gm-type #edit-d-type .form-item-d-type {
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+/* Type donate */
+.gm-donate-form #gm-amount #edit-amount-list {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.gm-donate-form #gm-amount #edit-amount-list input{
+	display: none;
+}
+
+.gm-donate-form #gm-amount #edit-amount-list .form-item-amount-list [type="radio"]:checked + label{
+	border: 1px solid #000000;
+    background: rgba(1,1,1,.1);
+}
+
+.gm-donate-form #gm-amount #edit-amount-list .form-item-amount-list [type="radio"] label{
+	border: 1px solid #000000;
+}
+
+.gm-donate-form #gm-amount #edit-amount-list input + label{
+	width: 100%;
+    display: inline-block;
+    border: 1px solid;
+    padding: 10px;
+    
+}
+
+.gm-donate-form #gm-amount #edit-amount-list .form-item-amount-list{
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+/* gm-autre donate */
+.gm-donate-form #gm-autre  {
+    display: flex;
+    width: 100%;
+}
+
+.gm-donate-form #gm-autre .form-item-autre-montant {
+    display: flex;
+    width: 100%;
+}
+
+.gm-donate-form #gm-autre .form-item-autre-montant input{
+    width: 100%;
+    padding: 15px 10px;
+    margin: 10px 0 0 0;
+}
+
+/* gm-action donate */
+.gm-donate-form #gm-action {
+    display: flex;
+    margin-top: 30px;
+}
+
+.gm-donate-form #gm-action .form-actions{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.gm-donate-form #gm-action .form-actions input{
+    width: 100%;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+}

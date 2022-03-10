@@ -1,0 +1,83 @@
+gm-design:
+  js:
+    js/paypal.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+  css:
+    theme:
+      'css/gm-adhesion.css': {}
+
+gm-design-mensuel:
+  js:
+    js/paypal-mensuel.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+  # css:
+  #   theme:
+  #     'css/gm-adhesion-all.css': {}
+
+gm-donation-settings:
+  js:
+    js/gm-donation-settings.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupal.debounce
+    - core/drupalSettings
+  css:
+    theme:
+      'css/gm-donation-settings.css': {}
+
+# gm-autocomplete:
+#   js:
+#     js/autocomplete-attach.js: {}
+#   dependencies:
+#     - core/jquery
+#     - core/drupal
+#     - core/drupalSettings
+    
+gm-design-ponctuel:
+  js:
+    js/paypal-ponctuel.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+  # css:
+  #   theme:
+  #     'css/gm-adhesion-all.css': {}
+
+gm-design-all:
+  # js:
+  #   js/paypal-ponctuel.js: {}
+  # dependencies:
+  #   - core/jquery
+  #   - core/drupal
+  #   - core/drupalSettings
+  css:
+    theme:
+      'css/gm-adhesion-all.css': {}
+
+gm-react-donate:
+  js:
+    app/dist/app.bundle.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+gm-design-adhesion:
+  # js:
+  #   js/paypal-ponctuel.js: {}
+  # dependencies:
+  #   - core/jquery
+  #   - core/drupal
+  #   - core/drupalSettings
+  css:
+    theme:
+      'css/gm-adhesion-design.css': {}

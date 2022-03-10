@@ -1,0 +1,72 @@
+{{ attach_library('gm_adhesion/gm-design-all') }}
+{% if bg_page %}
+<div id="gm-main-donation" class="gm-section clearfix" style="background-image:url({{bg_page}});">
+{% else %}
+<div id="gm-main-donation" class="gm-section clearfix">
+{% endif %}
+    <div class="gm-dn-tunnel">
+        <ul>
+            <li class="gm-dn-tnnl-tm">
+                <a href="{{ path('entity.node.canonical', {'node': donation_nid}) }}">{{ 'Renseignement'|t }}</a>
+            </li>
+            <li class="gm-dn-tnnl-tm">
+                <i class="bi bi-chevron-compact-right"></i>
+            </li>
+            <li class="gm-dn-tnnl-tm gm-dn-tunnel-active">
+                <a href="#">{{ 'Payement'|t }}</a>
+            </li>
+            <li class="gm-dn-tnnl-tm">
+                <i class="bi bi-chevron-compact-right"></i>
+            </li>
+            <li class="gm-dn-tnnl-tm">
+                <a href="#">{{ 'Merci'|t }}</a>
+            </li>
+        </ul>
+    </div>
+    <div id="gm-mn-dn" class="gm-container-main">
+        {% set type_de_don = donation_type_p == '1' ? 'ponctuel ' : 'mensuel ' %}
+        {% if donation_type_p == '1' %}
+            <script src="https://www.paypal.com/sdk/js?client-id={{ client }}&currency=EUR"></script>
+        {% else %}
+            <script src="https://www.paypal.com/sdk/js?client-id={{ client }}&vault=true&intent=subscription&currency=EUR"></script> 
+        {% endif %}
+        {% if donation_nid %}
+            <div class="gm-go-back-w">
+                <ul>
+                    <li class="gm-go-back">
+                        <a href="{{ path('entity.node.canonical', {'node': donation_nid}) }}"><i class="bi bi-arrow-left"></i> {{ 'Retour à la page des donations'|t }}</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+        <div class="gm-dn-wrapper">
+            <div class="gm-don-type">
+                {{ 'Vous faites un don '|t }} {{ type_de_don }} de
+            </div>
+            <div class="gm-don-amount">
+                <strong class="gm-don-amount-data">{{ donation_amount }}</strong> €
+            </div>
+            <div class="gm-don-impots">
+                {{ 'Soit '|t }} <strong>{{ donation_amount * 34 / 100 }}</strong>  {{ '€ après réduction d’impôt.'|t }}
+            </div>
+            {% if destinataire_don %}
+                <div class="gm-don-destinataire">
+                    {{ destinataire_don|raw }}
+                </div>
+            {% endif %}
+            {% if donnee_formulaire %}
+                <div class="gm-don-donnees-formulaire">
+                    {{ donnee_formulaire|raw }}
+                </div>
+            {% endif %}
+            <div class="gm-don-btns">
+                <div id="paypal-button-container" data-type="{{ type_de_don }}" data-amount="{{ donation_amount }}" data-don="{{ donation_type_p == '1' ? donation_amount : amount_list_mensuel }}"></div>
+            </div>
+        </div>
+     </div>
+<div>
+{% if donation_type_p == '1' %}
+    {{ attach_library('gm_adhesion/gm-design-ponctuel') }}
+{% else %}
+    {{ attach_library('gm_adhesion/gm-design-mensuel') }}
+{% endif %}
